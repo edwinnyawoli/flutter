@@ -986,7 +986,10 @@ class _PackageLicensePageTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(title, style: theme.headline6),
-        Text(subtitle, style: theme.subtitle2),
+        Visibility(
+          visible: subtitle != null && subtitle.isNotEmpty,
+          child: Text(subtitle, style: theme.subtitle2),
+        )
       ],
     );
   }
